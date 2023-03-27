@@ -53,7 +53,9 @@ class BingoLobby {
 
     // Se elimina al jugador del mapa de jugadores
     this.players.delete(playerId);
-    console.log(`Se eliminó al jugador ${player.name} del lobby ${this.lobbyId}`);
+    console.log(
+      `Se eliminó al jugador ${player.name} del lobby ${this.lobbyId}`
+    );
 
     // Se envía el mensaje de que un jugador se desconectó al resto de los jugadores
     this.io.to(this.lobbyId).emit("player-disconnected", { player });
